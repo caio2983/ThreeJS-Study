@@ -8,21 +8,89 @@
         body {
             margin: 0;
         }
+
+        .page {
+            display: none;
+
+        }
+
+        .active {
+            display: block;
+            width: 100%;
+
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <script type="module" src="/main.js">
+    <script src="https://cdn.jsdelivr.net/npm/page/page.js"></script>
+    <script type="module" src="/main.js"> </script>
+    <script>
+
+        function resetScene() {
+            cube.position.x = 0;
+            cube.position.y = 0;
+            cube.position.z = 0;
+
+            camera.position.x = 0;
+            camera.position.y = 0;
+            camera.position.z = 5;
+        }
+
+        let toggle = false;
+
+        function navToggle() {
+            toggle = !toggle;
+
+            const navDiv = document.getElementById("nav-div");
+
+            if (toggle) {
+                navDiv.classList.add("show");
+            } else {
+                navDiv.classList.remove("show");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const resetButtons = document.querySelectorAll(".reset-button");
+            resetButtons.forEach(button => {
+                button.addEventListener("click", resetScene);
+            });
 
 
-
-
+            const navButtons = document.querySelectorAll(".nav-button");
+            navButtons.forEach(button => {
+                button.addEventListener("click", navToggle);
+            });
+        });
 
     </script>
-    <button id="reset-button">Reset</button>
-    <button id="nav-button">Nav</button>
-    <div id="nav-div"></div>
+
+
+    <div class="page" id="home">
+        <button class="reset-button">Reset</button>
+        <button class="nav-button">Nav</button>
+
+    </div>
+
+    <div class="page" id="page2">
+        <button class="reset-button">Reset</button>
+        <button class="nav-button">Nav</button>
+
+    </div>
+
+    <div id="nav-div">
+        <nav>
+            <a href="/" data-navigo>Home</a>
+            <a href="/page2" data-navigo>Page2</a>
+        </nav>
+    </div>
+
+
+
+
 
 </body>
 

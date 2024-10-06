@@ -6,13 +6,13 @@ button {
     position: absolute;
 }
 
-#reset-button {
+.reset-button {
 
     top: 0;
     left: 0;
 }
 
-#nav-button {
+.nav-button {
     top: 0;
     right: 0;
 }
@@ -23,7 +23,7 @@ bottom:0;
 right: -300px;
 height: 400px;
 width: 300px;
-background-color: gray;
+background-color: #292245;
 
 transition: transform 0.3s ease; 
 transform: translateX(-300px); 
@@ -33,4 +33,17 @@ transform: translateX(-300px);
 
 #nav-div.show {
     transform: translateX(300px); 
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    height : 100%;
+
+  
+}
+
+a {
+    color: gray;
 }
