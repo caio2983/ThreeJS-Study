@@ -39,21 +39,32 @@ function animate() {
 document.onkeydown = function(e) {
     if(e.keyCode === 65) {
         cube.position.x -= 1;
-        console.log("teste")
+   
     }
 
     if(e.keyCode === 68) {
         cube.position.x += 1;
-        console.log("teste")
+
     }
 
     if(e.keyCode === 83) {
         cube.position.y -= 1;
-        console.log("teste")
+
     }
 
     if(e.keyCode === 87) {
         cube.position.y += 1;
-        console.log("teste")
+ 
     }
 }
+
+function resetScene() {
+    cube.position.x = 0;
+    cube.position.y = 0;
+    cube.position.z = 0;
+  }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const resetButton = document.querySelector("button");
+    resetButton.addEventListener("click", resetScene);
+});
