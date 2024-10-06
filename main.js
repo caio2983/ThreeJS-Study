@@ -58,6 +58,8 @@ document.onkeydown = function(e) {
     }
 }
 
+
+
 function resetScene() {
     cube.position.x = 0;
     cube.position.y = 0;
@@ -68,7 +70,26 @@ function resetScene() {
     camera.position.z = 5;
   }
 
+  let toggle = false;
+
+  function navToggle() {
+    toggle = !toggle;
+
+    const navDiv = document.getElementById("nav-div");
+
+    if (toggle) {
+        navDiv.classList.add("show"); 
+    } else {
+        navDiv.classList.remove("show"); 
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    const resetButton = document.querySelector("button");
+    const resetButton = document.getElementById("reset-button");
     resetButton.addEventListener("click", resetScene);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navButton = document.getElementById("nav-button");
+    navButton.addEventListener("click", navToggle);
 });

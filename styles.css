@@ -1,5 +1,36 @@
+* {
+    overflow: hidden;
+}
+
 button {
     position: absolute;
+}
+
+#reset-button {
+
     top: 0;
     left: 0;
+}
+
+#nav-button {
+    top: 0;
+    right: 0;
+}
+
+#nav-div {
+position: absolute;
+bottom:0;
+right: -300px;
+height: 400px;
+width: 300px;
+background-color: gray;
+
+transition: transform 0.3s ease; 
+transform: translateX(-300px); 
+
+
+}
+
+#nav-div.show {
+    transform: translateX(300px); 
 }
