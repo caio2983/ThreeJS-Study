@@ -62,6 +62,10 @@ function resetScene() {
     cube.position.x = 0;
     cube.position.y = 0;
     cube.position.z = 0;
+
+    camera.position.x = 0;
+    camera.position.y = 0;
+    camera.position.z = 5;
   }
 
 document.addEventListener("DOMContentLoaded", () => {
