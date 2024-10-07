@@ -19,6 +19,11 @@
             width: 100%;
 
         }
+
+        .reset-buttoN {
+            top: 0;
+            left: 0;
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -27,6 +32,8 @@
     <script src="https://cdn.jsdelivr.net/npm/page/page.js"></script>
     <script type="module" src="/main.js"> </script>
     <script>
+
+
 
 
         let toggle = false;
@@ -43,12 +50,10 @@
             }
         }
 
+
+
         document.addEventListener("DOMContentLoaded", () => {
 
-            const resetButtons = document.querySelectorAll(".reset-button");
-            resetButtons.forEach(button => {
-                button.addEventListener("click", resetScene);
-            });
 
 
             const navButtons = document.querySelectorAll(".nav-button");
@@ -76,7 +81,7 @@
 
 
     <div class="page" id="home">
-        <button class="reset-button">Reset</button>
+        <!-- <button class="reset-button">Reset</button> -->
         <button class="nav-button">Nav</button>
 
     </div>

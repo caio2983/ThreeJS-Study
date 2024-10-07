@@ -59,6 +59,21 @@ window.addEventListener("keydown", function(e) {
     }
 });
 
+const resetButton = document.createElement('button');
+resetButton.className = 'reset-buttoN';
+resetButton.innerText = 'Reset';
+document.body.appendChild(resetButton);
+
+resetButton.addEventListener('click', resetPositions);
+
+function resetPositions() {
+    cube.position.set(0, 0, 0); 
+    camera.position.set(0, 0, 5); 
+
+}
+
+
+
 
 }
 
@@ -129,6 +144,8 @@ function showPage(pageId) {
     document.getElementById(pageId).classList.add('active');
  
 }
+
+
 
 page('/', () => {
     showPage('home');
