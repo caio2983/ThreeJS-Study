@@ -28,15 +28,6 @@
     <script type="module" src="/main.js"> </script>
     <script>
 
-        function resetScene() {
-            cube.position.x = 0;
-            cube.position.y = 0;
-            cube.position.z = 0;
-
-            camera.position.x = 0;
-            camera.position.y = 0;
-            camera.position.z = 5;
-        }
 
         let toggle = false;
 
@@ -65,6 +56,21 @@
                 button.addEventListener("click", navToggle);
             });
         });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const anchors = document.querySelectorAll("a");
+
+            anchors.forEach(anchor => {
+                anchor.addEventListener("click", (event) => {
+
+                    const href = anchor.getAttribute("href");
+                    page(href);
+
+                });
+            });
+        });
+
+
 
     </script>
 
